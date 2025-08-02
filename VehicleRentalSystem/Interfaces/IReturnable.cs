@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace VehicleRentalSystem.Interfaces
 {
-    internal class IReturnable
+    public class IReturnable
     {
+        void ReturnVehicle();
     }
 }
