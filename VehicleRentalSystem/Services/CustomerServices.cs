@@ -11,7 +11,7 @@ namespace VehicleRentalSystem.Services
     {
         private readonly List<Customer> _customers = new();
         // To identity customer uniquely
-        private int _nextId = 1;
+        private int _nextCustomerId = 1;
 
         public void RegisterCustomer()
         {
@@ -24,12 +24,13 @@ namespace VehicleRentalSystem.Services
                 return;
             }
 
-            var customer = new Customer { Customer_Id = _nextId++, Customer_Name = customer_Name };
+            var customer = new Customer { Customer_Id = _nextCustomerId++, Customer_Name = customer_Name };
             _customers.Add(customer);
+            Console.WriteLine("Customer registered successfully.");
 
         }
 
-        public void ShowCustomer()
+        public void ShowCustomers()
         {
             if(_customers.Count == 0)
             {
@@ -43,7 +44,7 @@ namespace VehicleRentalSystem.Services
             }
         }
 
-        public Customer? CustomerById(int id)
+        public Customer? GetCustomerById(int id)
         {
             return _customers.FirstOrDefault(c => c.Customer_Id == id);
         }

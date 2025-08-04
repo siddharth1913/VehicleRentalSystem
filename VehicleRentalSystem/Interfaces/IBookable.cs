@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VehicleRentalSystem.Interfaces
 {
-    public class IBookable
+    public interface IBookable
     {
         void BookVehicle();
     }
