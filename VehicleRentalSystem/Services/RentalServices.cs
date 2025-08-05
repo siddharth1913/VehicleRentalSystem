@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -58,7 +59,8 @@ namespace VehicleRentalSystem.Services
             vehicle.IsBooked = true;
             vehicle.BookedByCustomerID = customer.Customer_Id;
 
-            Console.WriteLine($"Booked successfully for {customer.Customer_Name}. Total Rent: ₹{cost}");
+            CultureInfo indian = new CultureInfo("en-IN");
+            Console.WriteLine($"Booked successfully for {customer.Customer_Name}. Total Rent: {cost.ToString("C", indian)}");
 
         }
 
