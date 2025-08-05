@@ -18,7 +18,7 @@ namespace VehicleRentalSystem.Services
             Console.Write("Enter customers name : ");
             string? customer_Name = Console.ReadLine();
 
-            if (!string.IsNullOrEmpty(customer_Name))
+            if (string.IsNullOrEmpty(customer_Name))
             {
                 Console.WriteLine("Invalid name.");
                 return;

@@ -5,7 +5,7 @@ namespace VehicleRentalSystem
 {
     class Program
     {
-        static void main()
+        static void Main()
         {
             CustomerServices customerServices = new CustomerServices();
             VehicleServices vehicleServices = new VehicleServices();
@@ -23,6 +23,7 @@ namespace VehicleRentalSystem
                 Console.Write("Select option : ");
 
                 string? choice = Console.ReadLine();
+                Console.WriteLine("\n");
 
                 switch (choice)
                 {
