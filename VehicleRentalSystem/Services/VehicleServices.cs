@@ -24,6 +24,7 @@ namespace VehicleRentalSystem.Services
 
             Vehicle? vehicle = type switch
             {
+                // model! = The ! is the null-forgiving operator, which tells the compiler to assume that model will not be null at this point.
                 "car" => new Car { Vehicle_Id = _nextVehicleId++, Model = model!, IsBooked = false },
                 "bike" => new Bike { Vehicle_Id = _nextVehicleId++, Model = model!, IsBooked = false },
                 _ => null
@@ -52,7 +53,6 @@ namespace VehicleRentalSystem.Services
             {
                 Console.WriteLine(vehicle);
             }
-            Console.WriteLine();
         }
 
         public Vehicle? GetVehicleById(int id)

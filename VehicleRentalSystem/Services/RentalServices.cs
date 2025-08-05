@@ -5,6 +5,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using VehicleRentalSystem.Interfaces;
+using VehicleRentalSystem.Models;
 
 namespace VehicleRentalSystem.Services
 {
@@ -53,10 +54,11 @@ namespace VehicleRentalSystem.Services
             }
 
             var cost = vehicle.CalculateRent(days);
-            vehicle.IsBooked = true;
-            vehicle.BookedByCustomerID = null;
 
-            Console.WriteLine($"Vehicle {vehicle.Model} (ID: {vehicle.Vehicle_Id}) returned successfully.");
+            vehicle.IsBooked = true;
+            vehicle.BookedByCustomerID = customer.Customer_Id;
+
+            Console.WriteLine($"Booked successfully for {customer.Customer_Name}. Total Rent: ₹{cost}");
 
         }
 

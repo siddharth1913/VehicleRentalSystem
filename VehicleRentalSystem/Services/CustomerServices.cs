@@ -10,7 +10,7 @@ namespace VehicleRentalSystem.Services
     public class CustomerServices
     {
         private readonly List<Customer> _customers = new();
-        // To identity customer uniquely
+        // To identify customer uniquely
         private int _nextCustomerId = 1;
 
         public void RegisterCustomer()
